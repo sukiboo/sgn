@@ -22,9 +22,9 @@ x, y = sym.symbols('x, y')
 	to run the code, first select an example to define problem setting
 	exmaple 1,2,3,4 are presented in the paper
 
-	example 1: f = sym.sin(2*sym.pi*x) * sym.exp(-x**2)
+	example 1: f = sym.sin(2 * sym.pi * x) * sym.exp(-x**2)
 	example 2: f = sym.cos(sym.exp(3*x)) / (1 + 25*x**2)
-	example 3: f = sym.sin(sym.pi*x) * sym.cos(sym.pi*y) * sym.exp(-(x**2 + y**2))
+	example 3: f = sym.sin(sym.pi * x) * sym.cos(sym.pi * y) * sym.exp(-(x**2 + y**2))
 	example 4: f = sym.sin(sym.pi*(x-y)) * sym.exp(x+y)
 
 	values other than 1,2,3,4 result in a custom setting which can be configured below
@@ -54,7 +54,7 @@ if example not in [1,2,3,4]:
 	num_r = 250
 	num_s = 500
 
-	# SGN parameters
+	# GSN parameters
 	D_threshold = .001
 	nodes_threshold = .005
 
@@ -76,7 +76,7 @@ elif example == 1:
 	num_r = 250
 	num_s = 500
 
-	# SGN parameters
+	# GSN parameters
 	D_threshold = .001
 	nodes_threshold = .005
 
@@ -98,7 +98,7 @@ elif example == 2:
 	num_r = 250
 	num_s = 500
 
-	# SGN parameters
+	# GSN parameters
 	D_threshold = .001
 	nodes_threshold = .005
 
@@ -120,7 +120,7 @@ elif example == 3:
 	num_r = 150
 	num_s = 1000
 
-	# SGN parameters
+	# GSN parameters
 	D_threshold = .001
 	nodes_threshold = .005
 
@@ -142,7 +142,7 @@ elif example == 4:
 	num_r = 150
 	num_s = 1000
 
-	# SGN parameters
+	# GSN parameters
 	D_threshold = .001
 	nodes_threshold = .005
 
@@ -246,7 +246,7 @@ rand_tr = nf.eval_nn(A, B, C, c, sigma, x_tr)
 rand_ts = nf.eval_nn(A, B, C, c, sigma, x_ts)
 
 # report the approximation result
-print('approximation by trained network with greedy initialization:')
+print('approximation by trained network with random initialization:')
 af.print_approximation_errors(f_tr, rand_tr, f_ts, rand_ts)
 
 
@@ -262,7 +262,7 @@ print('approximation by trained network with random initialization:')
 af.print_approximation_errors(f_tr, rand_tr, f_ts, rand_ts)
 print('approximation by GSN initialization:')
 af.print_approximation_errors(f_tr, ga_init_tr, f_ts, ga_init_ts)
-print('approximation by trained network by GSN initialization:')
+print('approximation by trained network with GSN initialization:')
 af.print_approximation_errors(f_tr, ga_train_tr, f_ts, ga_train_ts)
 print()
 

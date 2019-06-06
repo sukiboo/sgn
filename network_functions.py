@@ -29,7 +29,7 @@ def train_nn(x, f, num_nodes, weights_init=None, summary=False, plot=False):
 	lr_decay = .9995
 	learning_rate = LearningRateScheduler(lambda epoch: lr_start * lr_decay**epoch)
 	epochs = 1000 if weights_init is not None else 10000
-	batch_size = x.shape[-1] if weights_init is not None else 1
+	batch_size = x.shape[-1] if weights_init is not None else 10
 
 	# establish the dimensionality of the data
 	if len(x.shape) == 1:
@@ -85,7 +85,7 @@ def train_nn(x, f, num_nodes, weights_init=None, summary=False, plot=False):
 		print('this usually takes up to 30 seconds...\n')
 	else:
 		label = 'random loss'
-		print('training network using random initialization...')
+		print('training with random initialization...')
 		print('this usually takes up to 3 minutes in 1d case and up to 30 minutes in 2d...\n')
 
 	# train the model

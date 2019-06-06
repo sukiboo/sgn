@@ -6,7 +6,6 @@
 
 import numpy as np
 import sympy as sym
-import scipy.stats
 import auxilary_functions as af
 
 

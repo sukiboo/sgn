@@ -4,7 +4,6 @@
 
 
 import numpy as np
-from sklearn.cluster import DBSCAN
 import auxilary_functions as af
 
 
