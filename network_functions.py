@@ -29,7 +29,7 @@ def train_nn(x, f, num_nodes, weights_init=None, summary=False, plot=False):
 	lr_decay = .9995
 	learning_rate = LearningRateScheduler(lambda epoch: lr_start * lr_decay**epoch)
 	epochs = 1000 if weights_init is not None else 10000
-	batch_size = x.shape[-1] if weights_init is not None else 10
+	batch_size = x.shape[-1] if weights_init is not None else 1
 
 	# establish the dimensionality of the data
 	if len(x.shape) == 1:
